@@ -1,5 +1,5 @@
-console.log("Ola");
+const app = require('./config/server');
 
-const fn = (x) => x + 2;
-
-fn(5);
+app.listen(3000, () => {
+	console.log("Servidor Online");
+})

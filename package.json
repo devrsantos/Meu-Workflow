@@ -5,6 +5,7 @@
   "author": "Renan Augusto dos Santos <devrsantos@gmail.com> (https://github.com/devrsantos)",
   "main": "src/app.js",
   "scripts": {
+    "start": "nodemon src/index.js",
     "lint": "eslint src/**/*.js --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,5 +15,12 @@
     "eslint-config-prettier": "6.1.0",
     "eslint-plugin-prettier": "3.1.0",
     "prettier": "1.18.2"
+  },
+  "dependencies": {
+    "body-parser": "1.19.0",
+    "consign": "0.1.6",
+    "ejs": "2.6.2",
+    "express": "4.17.1",
+    "nodemon": "1.19.1"
   }
 }
