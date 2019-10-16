@@ -1,12 +1,14 @@
 const express = require('express');
 const consign = require('consign');
 const bodyParser = require('body-parser');
+const cors = require('cors')
 
 const app = express();
 
 app.set('view engine', 'ejs');
 app.set('views', './src/app/views');
 
+app.use(cors());
 app.use(express.static('./src/app/views/public'));
 
 app.use(bodyParser.urlencoded({ extended: true }));
