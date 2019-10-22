@@ -3,7 +3,7 @@ module.exports.controller_test_get = (application, req, res) => {
 };
 
 module.exports.controller_test_post = (application, req, res) => {
-    application.app.src.app.models.model_testes_api.model_test_post(req, res);
+    application.src.app.models.model_testes_api.model_test_post(req, res);
 };
 
 module.exports.controller_test_put = (application, req, res) => {

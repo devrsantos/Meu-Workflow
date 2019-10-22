@@ -1,15 +1,15 @@
 module.exports.model_test_get = (req, res) => {
-    console.log("Method: GET");
+    res.send(res.req.body);
 };
 
 module.exports.model_test_post = (req, res) => {
-    console.log("Method: POST");
+    res.send(res.req.body);
 };
 
 module.exports.model_test_put = (req, res) => {
-    console.log("Method: PUT");
+    res.send(res.req.body);
 };
 
 module.exports.model_test_delete = (req, res) => {
-    console.log("Method: DELETE");
+    res.send(res.req.body);
 };
