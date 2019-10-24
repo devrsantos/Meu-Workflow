@@ -2,12 +2,13 @@ const { MongoClient } = require('mongodb');
 
 const parametros = require('./parametros');
 
-const fn_mongo = (fn, query, dados = {}) => {
+const fn_mongo = (fn, query = {}, dados = {}) => {
     MongoClient.connect(parametros.url, { useNewUrlParser: true }, (err, client) => {
         
         if (fn == 'findOne') {
             const db = client.db(parametros.dbName);
-            const documents = db.parametros.collectionNames._.findOne(dados);    
+            const documents = db.parametros.collectionNames._.findOne(dados);
+            client.close();
         }
 
         if (fn == 'insertOne') {
@@ -17,6 +18,7 @@ const fn_mongo = (fn, query, dados = {}) => {
             } catch (error) {
                 print(error);
             };
+            client.close();
         }
 
         if (fn == 'insertMany') {
@@ -26,6 +28,7 @@ const fn_mongo = (fn, query, dados = {}) => {
             } catch (error) {
                 print(error);
             };
+            client.close();
         }
 
         if (fn == 'deleteOne') {
@@ -35,6 +38,7 @@ const fn_mongo = (fn, query, dados = {}) => {
             } catch (error) {
                 print(error);
             };
+            client.close();
         }
 
         if (fn == 'deleteMany') {
@@ -44,6 +48,7 @@ const fn_mongo = (fn, query, dados = {}) => {
             } catch (error) {
                 print(error);
             };
+            client.close();
         }
 
         if (fn == 'updateOne') {
@@ -53,37 +58,18 @@ const fn_mongo = (fn, query, dados = {}) => {
             } catch (error) {
                 print(error);
             };
+            client.close();
         }
 
-        if (fn == 'deleteMany') {
+        if (fn == 'updateMany') {
             const db = client.db(parametros.dbName);
             try {
-                db.parametros.collectionNames._.deleteMany(query, dados);
+                db.parametros.collectionNames._.updateOne(query, dados);
             } catch (error) {
                 print(error);
             };
+            client.close();
         }
-
-        client.close();
-    });
-};
-
-models.update.updateOne = (query, dados) => {
-    MongoClient.connect(parametros.url, { useNewUrlParser: true }, (err, client) => {
-        
-        client.close();
-    });
-};
-
-models.update.updateMany = (query, dados) => {
-    MongoClient.connect(parametros.url, { useNewUrlParser: true }, (err, client) => {
-        const db = client.db(parametros.dbName);
-        try {
-            db.parametros.collectionNames._.updateOne(query, dados);
-        } catch (error) {
-            print(error);
-        };
-        client.close();
     });
 };
 
