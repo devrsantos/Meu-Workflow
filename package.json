@@ -8,7 +8,8 @@
     "start": "nodemon src/index.js",
     "lint": "eslint src/**/*.js --fix",
     "test": "jest tests/**/*.js",
-    "sass": "sass --watch ./src/app/views/public/files_sass:src/app/views/public/css/"
+    "sass": "sass --watch ./src/app/views/public/files_sass:src/app/views/public/css/",
+    "build": "webpack --watch"
   },
   "license": "MIT",
   "devDependencies": {
@@ -16,7 +17,9 @@
     "eslint-config-prettier": "6.1.0",
     "eslint-plugin-prettier": "3.1.0",
     "jest": "24.9.0",
-    "prettier": "1.18.2"
+    "prettier": "1.18.2",
+    "webpack": "4.41.2",
+    "webpack-cli": "3.3.9"
   },
   "dependencies": {
     "body-parser": "1.19.0",
