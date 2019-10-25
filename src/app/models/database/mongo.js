@@ -3,7 +3,7 @@ const { MongoClient } = require('mongodb');
 const parametros = require('./parametros');
 
 const fn_mongo = (fn, query = {}, dados = {}) => {
-    MongoClient.connect(parametros.url, { useNewUrlParser: true }, (err, client) => {
+    MongoClient.connect(parametros.url, { useNewUrlParser: true, useUnifiedTopology: true }, (err, client) => {
         
         if (fn == 'findOne') {
             const db = client.db(parametros.dbName);

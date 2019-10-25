@@ -1,11 +1,15 @@
-const dados = {
-    usuario: "NOME",
-    pass: "",
-    parametros_url: "",
-    dbName: "",
-    collections: {
-        principal: ""
-    }
-}
+const crypto = require('crypto');
 
-module.exports = dados;
+module.exports = {
+    dados : {
+        usuario: "NOME",
+        pass: "",
+        parametros_url: "",
+        dbName: "",
+        collections: {
+            principal: ""
+        }
+    },
+    
+    secretKey: "secretWord"
+};
